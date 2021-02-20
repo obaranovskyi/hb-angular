@@ -1,6 +1,6 @@
 {
   "name": "hb-angular",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,6 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "buttons-build": "ng build @obaranovskyi/hb-angular-buttons",
+    "buttons-build-prod": "ng build @obaranovskyi/hb-angular-buttons --prod",
+    "buttons-publish": "cd ./dist/obaranovskyi/hb-angular-buttons && npm publish --access=public",
     "buttons-build-watch": "ng build @obaranovskyi/hb-angular-buttons --watch",
     "e2e": "ng e2e"
   },
