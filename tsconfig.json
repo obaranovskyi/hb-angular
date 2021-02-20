@@ -2,6 +2,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@obaranovskyi/hb-angular-buttons": [
+        "dist/obaranovskyi/hb-angular-buttons/obaranovskyi-hb-angular-buttons",
+        "dist/obaranovskyi/hb-angular-buttons"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

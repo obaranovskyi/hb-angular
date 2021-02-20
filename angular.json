@@ -3,5 +3,166 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "@obaranovskyi/hb-angular-buttons": {
+      "projectType": "library",
+      "root": "projects/obaranovskyi/hb-angular-buttons",
+      "sourceRoot": "projects/obaranovskyi/hb-angular-buttons/src",
+      "prefix": "hb",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/obaranovskyi/hb-angular-buttons/tsconfig.lib.json",
+            "project": "projects/obaranovskyi/hb-angular-buttons/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/obaranovskyi/hb-angular-buttons/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/obaranovskyi/hb-angular-buttons/src/test.ts",
+            "tsConfig": "projects/obaranovskyi/hb-angular-buttons/tsconfig.spec.json",
+            "karmaConfig": "projects/obaranovskyi/hb-angular-buttons/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/obaranovskyi/hb-angular-buttons/tsconfig.lib.json",
+              "projects/obaranovskyi/hb-angular-buttons/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "hb-dev": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/hb-dev",
+      "sourceRoot": "projects/hb-dev/src",
+      "prefix": "dev",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/hb-dev",
+            "index": "projects/hb-dev/src/index.html",
+            "main": "projects/hb-dev/src/main.ts",
+            "polyfills": "projects/hb-dev/src/polyfills.ts",
+            "tsConfig": "projects/hb-dev/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/hb-dev/src/favicon.ico",
+              "projects/hb-dev/src/assets"
+            ],
+            "styles": [
+              "projects/hb-dev/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/hb-dev/src/environments/environment.ts",
+                  "with": "projects/hb-dev/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "hb-dev:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "hb-dev:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "hb-dev:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/hb-dev/src/test.ts",
+            "polyfills": "projects/hb-dev/src/polyfills.ts",
+            "tsConfig": "projects/hb-dev/tsconfig.spec.json",
+            "karmaConfig": "projects/hb-dev/karma.conf.js",
+            "assets": [
+              "projects/hb-dev/src/favicon.ico",
+              "projects/hb-dev/src/assets"
+            ],
+            "styles": [
+              "projects/hb-dev/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/hb-dev/tsconfig.app.json",
+              "projects/hb-dev/tsconfig.spec.json",
+              "projects/hb-dev/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/hb-dev/e2e/protractor.conf.js",
+            "devServerTarget": "hb-dev:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "hb-dev:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "@obaranovskyi/hb-angular-buttons"
 }
