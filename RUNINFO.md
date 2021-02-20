@@ -6,5 +6,9 @@
 `ng generate component main-page --project=hb-dev` or `ng generate component main-page --project=@obaranovskyi/hb-angular-buttons`
 
 ### To publish package:
-1. `cd ./dist/obaranovskyi/hb-angular-buttons`
-2. `npm publish --access=public`
+  - `cd hb-angular`
+  - `npm run buttons-build-prod`
+  - Add licence to `./dist/obaranovskyi/hb-angular-buttons/package.json` - "licence": "MIT",
+  - Increase version
+  - `cd ./dist/obaranovskyi/hb-angular-buttons`
+  - `npm publish --access=public`

@@ -4,7 +4,10 @@ import { HbButtonComponent } from './hb-button/hb-button.component';
 
 
 @NgModule({
-  declarations: [HbAngularButtonsComponent, HbButtonComponent],
+  declarations: [
+    HbAngularButtonsComponent,
+    HbButtonComponent
+  ],
   imports: [
   ],
   exports: [

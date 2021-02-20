@@ -5,11 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './buttons-test.component.html',
   styleUrls: ['./buttons-test.component.scss']
 })
-export class ButtonsTestComponent implements OnInit {
+export class ButtonsTestComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  onClick(event: MouseEvent): void {
+    console.log('button clicked');
+    console.log(event);
   }
-
 }
