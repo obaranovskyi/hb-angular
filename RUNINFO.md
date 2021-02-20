@@ -8,7 +8,8 @@
 ### To publish package:
   - `cd hb-angular`
   - `npm run buttons-build-prod`
-  - Add licence to `./dist/obaranovskyi/hb-angular-buttons/package.json` - "licence": "MIT",
+  - Add license to `./dist/obaranovskyi/hb-angular-buttons/package.json` - "license": "MIT",
+  - Add license file (copy from the root directory)
   - Increase version
   - `cd ./dist/obaranovskyi/hb-angular-buttons`
   - `npm publish --access=public`
