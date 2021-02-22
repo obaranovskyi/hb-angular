@@ -3,43 +3,42 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import { applyStyles } from '../core/styles.core';
 import { commonBtnStyle } from '../constants/button-styles.constants';
 import { ButtonTypeEnum } from '../enums/button-type.enum';
-import { KeyValue } from '../types';
+import { KeyValue, ApplyStyleFn } from '../types';
 
 
 @Directive({
   selector: '[hbButton]'
 })
 export class HbButtonDirective implements OnInit {
-  _look: ButtonTypeEnum = ButtonTypeEnum.Primary;
+  private _look: ButtonTypeEnum = ButtonTypeEnum.Primary;
+  private _apply: ApplyStyleFn;
 
   @Input()
   set look(value: ButtonTypeEnum) {
     this._look = value;
-    this.updateStyles();
+    this._updateStyles();
   }
   get look(): ButtonTypeEnum {
     return this._look;
   }
 
-  apply: (keyValue: KeyValue) => void;
-
   constructor(
-    private readonly elementRef: ElementRef,
-    private readonly renderer: Renderer2
+    private readonly _elementRef: ElementRef,
+    private readonly _renderer2: Renderer2
   ) {
-    this.apply = (keyValue: KeyValue) =>
-      applyStyles(elementRef, renderer, keyValue);
+    this._apply = (keyValue: KeyValue) =>
+      applyStyles(_elementRef, _renderer2, keyValue);
   }
 
   ngOnInit(): void {
-    this.applyCommonStyles();
+    this._applyCommonStyles();
   }
 
-  applyCommonStyles(): void {
-    this.apply(commonBtnStyle);
+  private _applyCommonStyles(): void {
+    this._apply(commonBtnStyle);
   }
 
-  updateStyles(): void {
-    this.apply(ButtonTypeEnum.styles(this.look));
+  private _updateStyles(): void {
+    this._apply(ButtonTypeEnum.styles(this.look));
   }
 }
