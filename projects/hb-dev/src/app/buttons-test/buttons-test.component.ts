@@ -10,6 +10,7 @@ import { ButtonTypeEnum } from '@obaranovskyi/hb-angular-buttons';
 })
 export class ButtonsTestComponent {
   firstBtnClass: ButtonTypeEnum = ButtonTypeEnum.Dark;
+  toggleBtn: ButtonTypeEnum = ButtonTypeEnum.Light;
 
   onClick(event: MouseEvent): void {
     this.firstBtnClass = this.firstBtnClass === ButtonTypeEnum.Dark
