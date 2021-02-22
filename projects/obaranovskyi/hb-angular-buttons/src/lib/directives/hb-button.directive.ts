@@ -1,5 +1,7 @@
 import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
+import { commonBthStyle } from '../constants/button-styles.constants';
+
 import { ButtonTypeEnum } from '../enums/button-type.enum';
 import { KeyValue } from '../types';
 
@@ -25,7 +27,17 @@ export class HbButtonDirective implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.look);
+    this.applyCommonStyles();
+  }
+
+  applyCommonStyles(): void {
+    Object.keys(commonBthStyle).forEach((key: string) => {
+      this.renderer.setStyle(
+        this.elementRef.nativeElement,
+        key,
+        commonBthStyle[key]
+      );
+    });
   }
 
   updateStyles(): void {
