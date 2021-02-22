@@ -1,5 +1,4 @@
 import { darkBtnStyle, lightBtnStyle } from '../constants/button-styles.constants';
-import { ButtonStyleModel } from '../models/button-style.model';
 import { KeyValue } from '../types';
 
 

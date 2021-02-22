@@ -1,9 +1,10 @@
-import { KeyValue } from '../types';
-import { asCss } from '../core/styles.core';
 import { flowRight } from 'lodash';
 
+import { KeyValue } from '../types';
+import { asCss } from '../core/styles.core';
 
-export const btnStyle = (
+
+const btnStyle = (
   color: string,
   background: string
 ): string => `
@@ -11,11 +12,12 @@ export const btnStyle = (
   color: ${background};
 `;
 
+const btnAsCss = flowRight(asCss, btnStyle);
+
+export const lightBtnStyle: KeyValue = btnAsCss('white', 'black');
+export const darkBtnStyle: KeyValue = btnAsCss('black', 'white');
+
 export const commonBtnStyle: KeyValue = asCss(`
   padding: 10px 15px;
   font-size: 14px;
 `);
-
-export const lightBtnStyle: KeyValue = flowRight(asCss, btnStyle)('white', 'black');
-export const darkBtnStyle: KeyValue = flowRight(asCss, btnStyle)('black', 'white');
-
