@@ -1,30 +1,32 @@
+import { darkBtnStyle, lightBtnStyle } from '../constants/button-styles.constants';
 import { ButtonStyleModel } from '../models/button-style.model';
+import { KeyValue } from '../types';
 
 
 export enum ButtonTypeEnum {
-  Primary = 1,
-  Secondary = 2,
-  Success = 3,
-  Danger = 4,
-  Warning = 5,
-  Info = 6,
-  Light = 7,
-  Dark = 8
+  Primary = 'primary',
+  Secondary = 'secondary',
+  Success = 'success',
+  Danger = 'danger',
+  Warning = 'warning',
+  Info = 'info',
+  Light = 'light',
+  Dark = 'dark'
 }
 
 export namespace ButtonTypeEnum {
-  const buttonStylesMap = new Map<ButtonTypeEnum, ButtonStyleModel>([
+  const buttonStylesMap = new Map<ButtonTypeEnum, KeyValue>([
     [ButtonTypeEnum.Primary, { color: 'white', backgroundColor: 'black' }],
     [ButtonTypeEnum.Secondary, { color: 'white', backgroundColor: 'black' }],
     [ButtonTypeEnum.Success, { color: 'white', backgroundColor: 'black' }],
     [ButtonTypeEnum.Danger, { color: 'white', backgroundColor: 'black' }],
     [ButtonTypeEnum.Warning, { color: 'white', backgroundColor: 'black' }],
     [ButtonTypeEnum.Info, { color: 'white', backgroundColor: 'black' }],
-    [ButtonTypeEnum.Light, { color: 'dark', backgroundColor: 'white' }],
-    [ButtonTypeEnum.Dark, { color: 'white', backgroundColor: 'black' }]
+    [ButtonTypeEnum.Light, lightBtnStyle ],
+    [ButtonTypeEnum.Dark, darkBtnStyle ]
   ]);
 
-  export function styles(buttonType: ButtonTypeEnum): ButtonStyleModel {
-    return buttonStylesMap.get(buttonType) as ButtonStyleModel;
+  export function styles(buttonType: ButtonTypeEnum): KeyValue {
+    return buttonStylesMap.get(buttonType) ?? {};
   }
 }

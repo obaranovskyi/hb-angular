@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ButtonTypeEnum } from '@obaranovskyi/hb-angular-buttons';
+
 
 @Component({
   selector: 'dev-buttons-test',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buttons-test.component.scss']
 })
 export class ButtonsTestComponent {
-  firstBtnClass: string = 'dark';
+  firstBtnClass: ButtonTypeEnum = ButtonTypeEnum.Dark;
 
   onClick(event: MouseEvent): void {
-    this.firstBtnClass = this.firstBtnClass === 'dark' ? 'light' : 'dark';
+    this.firstBtnClass = this.firstBtnClass === ButtonTypeEnum.Dark
+      ? ButtonTypeEnum.Light
+      : ButtonTypeEnum.Dark;
   }
 }

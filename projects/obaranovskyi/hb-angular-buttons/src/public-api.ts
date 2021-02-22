@@ -2,8 +2,8 @@
  * Public API Surface of hb-angular-buttons
  */
 
-// Models
-// export * from './lib/enums/button-type.enum';
+// Enums
+export * from './lib/enums/button-type.enum';
 
 // Enums
 // export * from './lib/models/button-style.model';
