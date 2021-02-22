@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
+
 import { HbAngularButtonsComponent } from './hb-angular-buttons.component';
-import { HbButtonComponent } from './hb-button/hb-button.component';
+import { HbButtonDirective } from './directives/hb-button.directive';
 
 
 @NgModule({
   declarations: [
     HbAngularButtonsComponent,
-    HbButtonComponent
-  ],
-  imports: [
+    HbButtonDirective
   ],
   exports: [
     HbAngularButtonsComponent,
-    HbButtonComponent
+    HbButtonDirective
   ]
 })
 export class HbAngularButtonsModule { }
