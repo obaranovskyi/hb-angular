@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 
 import { applyStyles } from '../core/styles.core';
 import { commonBtnStyle } from '../constants/button-styles.constants';
@@ -32,6 +32,27 @@ export class HbButtonDirective implements OnInit {
 
   ngOnInit(): void {
     this._applyCommonStyles();
+  }
+
+  @HostListener('mouseover')
+  onMouseOver(): void {
+    this._apply({ 'opacity': '0.8' });
+  }
+
+  @HostListener('mouseout')
+  onMouseOut(): void {
+    this._apply({ 'opacity': '1' });
+  }
+
+
+  @HostListener('mousedown')
+  onMouseDown(): void {
+    this._apply({ 'opacity': '1' });
+  }
+
+  @HostListener('mouseup')
+  onMouseUp(): void {
+    this._apply({ 'opacity': '0.8' });
   }
 
   private _applyCommonStyles(): void {
