@@ -9,4 +9,5 @@ export const commonBtnStyle: KeyValue = asCss(`
   font-size: 14px;
   border-radius: 5px;
   opacity: .9;
+  cursor: pointer;
 `);

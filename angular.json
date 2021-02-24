@@ -68,7 +68,8 @@
               "projects/hb-dev/src/assets"
             ],
             "styles": [
-              "projects/hb-dev/src/styles.scss"
+              "projects/hb-dev/src/styles.scss",
+              "dist/obaranovskyi/hb-angular-buttons/hb-angular-buttons.styles.scss"
             ],
             "scripts": []
           },
