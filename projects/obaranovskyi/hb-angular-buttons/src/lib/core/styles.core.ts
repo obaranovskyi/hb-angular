@@ -23,7 +23,11 @@ export const asCss = (value: string): KeyValue => {
   }, {});
 };
 
-export const applyStyles = (elementRef: ElementRef, renderer: Renderer2, styles: KeyValue): void => {
+export const applyStyles = (
+  elementRef: ElementRef,
+  renderer: Renderer2,
+  styles: KeyValue
+): void => {
     Object.keys(styles).forEach((key: string) => {
       renderer.setStyle(
         elementRef.nativeElement,

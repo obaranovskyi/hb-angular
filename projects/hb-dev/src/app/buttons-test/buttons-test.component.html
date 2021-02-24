@@ -1,4 +1,13 @@
-<button hbButton [look]="firstBtnClass">Button</button>
-<br>
-<br>
-<button hbButton [look]="toggleBtn" (click)="onClick($event)">Update styles</button>
+<button hbButton [look]="ButtonTypeEnum.Primary">Primary</button>
+<button hbButton [look]="ButtonTypeEnum.Success">Success</button>
+<button hbButton [look]="ButtonTypeEnum.Secondary">Secondary</button>
+<button hbButton [look]="ButtonTypeEnum.Danger">Danger</button>
+<button hbButton [look]="ButtonTypeEnum.Warning">Warning</button>
+<button hbButton [look]="ButtonTypeEnum.Info">Info</button>
+<button hbButton [look]="ButtonTypeEnum.Light">Light</button>
+<button hbButton [look]="ButtonTypeEnum.Dark">Dark</button>
+<!--
+   -<br>
+   -<br>
+   -<button hbButton [look]="toggleBtn" (click)="onClick($event)">Update styles</button>
+   -->

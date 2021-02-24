@@ -9,6 +9,7 @@ import { ButtonTypeEnum } from '@obaranovskyi/hb-angular-buttons';
   styleUrls: ['./buttons-test.component.scss']
 })
 export class ButtonsTestComponent {
+  ButtonTypeEnum: typeof ButtonTypeEnum = ButtonTypeEnum;
   firstBtnClass: ButtonTypeEnum = ButtonTypeEnum.Dark;
   toggleBtn: ButtonTypeEnum = ButtonTypeEnum.Light;
 

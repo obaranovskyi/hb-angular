@@ -1,7 +1,7 @@
 import { Directive, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 
-import { applyStyles } from '../core/styles.core';
-import { commonBtnStyle } from '../constants/button-styles.constants';
+import { applyStyles } from '../core';
+import { commonBtnStyle } from '../constants/button-styles.constant';
 import { ButtonTypeEnum } from '../enums/button-type.enum';
 import { KeyValue, ApplyStyleFn } from '../types';
 
@@ -41,9 +41,8 @@ export class HbButtonDirective implements OnInit {
 
   @HostListener('mouseout')
   onMouseOut(): void {
-    this._apply({ 'opacity': '1' });
+    this._apply({ 'opacity': '0.9' });
   }
-
 
   @HostListener('mousedown')
   onMouseDown(): void {

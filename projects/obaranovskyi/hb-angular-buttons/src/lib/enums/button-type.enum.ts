@@ -1,4 +1,5 @@
-import { darkBtnStyle, lightBtnStyle } from '../constants/button-styles.constants';
+import { btnAsCss } from '../core';
+import { ColorsEnum } from '../enums/colors.enum';
 import { KeyValue } from '../types';
 
 
@@ -15,14 +16,14 @@ export enum ButtonTypeEnum {
 
 export namespace ButtonTypeEnum {
   const buttonStylesMap = new Map<ButtonTypeEnum, KeyValue>([
-    [ButtonTypeEnum.Primary, { color: 'white', backgroundColor: 'black' }],
-    [ButtonTypeEnum.Secondary, { color: 'white', backgroundColor: 'black' }],
-    [ButtonTypeEnum.Success, { color: 'white', backgroundColor: 'black' }],
-    [ButtonTypeEnum.Danger, { color: 'white', backgroundColor: 'black' }],
-    [ButtonTypeEnum.Warning, { color: 'white', backgroundColor: 'black' }],
-    [ButtonTypeEnum.Info, { color: 'white', backgroundColor: 'black' }],
-    [ButtonTypeEnum.Light, lightBtnStyle ],
-    [ButtonTypeEnum.Dark, darkBtnStyle ]
+    [ButtonTypeEnum.Primary, btnAsCss(ColorsEnum.Blue, 'white' )],
+    [ButtonTypeEnum.Secondary, btnAsCss(ColorsEnum.Gray, 'white' )],
+    [ButtonTypeEnum.Success, btnAsCss(ColorsEnum.Green, 'white' )],
+    [ButtonTypeEnum.Danger, btnAsCss(ColorsEnum.Red, 'white' )],
+    [ButtonTypeEnum.Warning, btnAsCss(ColorsEnum.Orange, 'black' )],
+    [ButtonTypeEnum.Info, btnAsCss(ColorsEnum.Turkish, 'white' )],
+    [ButtonTypeEnum.Light, btnAsCss(ColorsEnum.White, 'black' ) ],
+    [ButtonTypeEnum.Dark, btnAsCss(ColorsEnum.Black, 'white') ]
   ]);
 
   export function styles(buttonType: ButtonTypeEnum): KeyValue {
