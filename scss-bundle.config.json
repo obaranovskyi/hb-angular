@@ -2,6 +2,7 @@
   "bundlerOptions": {
     "entryFile": "./projects/obaranovskyi/hb-angular-buttons/src/assets/scss/_styles.scss",
     "rootDir": "./projects/obaranovskyi/hb-angular-buttons/src/assets/scss/",
-    "outFile": "./dist/obaranovskyi/hb-angular-buttons/hb-angular-buttons.styles.scss"
+    "outFile": "./dist/obaranovskyi/hb-angular-buttons/hb-angular-buttons.styles.scss",
+    "logLevel": "debug"
   }
 }

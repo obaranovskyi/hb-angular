@@ -1,0 +1,58 @@
+@import './_functions.scss';
+@import './_colors.scss';
+@import './_text.scss';
+
+
+$button-background: (
+  success: $green,
+  primary: $blue,
+  danger: $red,
+  light: $white,
+  secondary: $gray,
+  dark: $black,
+  warning: $orange,
+  info: $turkish
+);
+
+$button-color: (
+  success: 'white',
+  primary: 'white',
+  danger: 'white',
+  light: 'black',
+  secondary: 'white',
+  dark: 'white',
+  warning: 'black',
+  info: 'white'
+);
+
+button[class^=hb-btn-] {
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  opacity: .9;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    opacity: .8;
+  }
+  &:active {
+    opacity: 1;
+  }
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+}
+
+@each $name, $background in $button-background {
+  .hb-btn-#{$name} {
+    @include normal-btn($background, map-get($button-color, $name));
+    @extend %unselectable-text;
+
+    &:focus {
+      box-shadow: 0 0 0 5px lighten($background, 30%);
+    }
+  }  
+}
+
