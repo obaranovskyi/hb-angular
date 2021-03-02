@@ -1,0 +1,16 @@
+.nav {
+  &-header {
+    color: green;
+    padding: 0 15px;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  &-item {
+    color: green;
+    font-size: 1.2em;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+

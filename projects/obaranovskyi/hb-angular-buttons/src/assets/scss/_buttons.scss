@@ -54,5 +54,15 @@ button[class^=hb-btn-] {
       box-shadow: 0 0 0 5px lighten($background, 30%);
     }
   }  
+
+  .hb-btn-outline-#{$name} {
+    @include outlined-btn($background);
+    @extend %unselectable-text;
+
+    &:focus {
+      box-shadow: 0 0 0 5px lighten($background, 30%);
+    }
+  }  
+
 }
 

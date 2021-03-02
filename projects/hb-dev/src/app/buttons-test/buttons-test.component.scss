@@ -1,3 +1,16 @@
-button { 
-  margin: 5px;
+.base-buttons,
+.outline-buttons {
+  margin: 20px;
+  padding: 10px;
+
+  [class^=hb-btn] {
+    margin: 5px;
+  }
+  
+  .button-header {
+    font-size: 20px;
+    padding: 10px 0 10px 5px;
+    color: green; 
+    font-weight: 500;
+  }
 }
